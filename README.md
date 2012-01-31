@@ -12,5 +12,5 @@ Its important that you read the comments in each file.
 * WordPress     example.php         Some example fixes
 </pre>
 
-Thought I would mention I checked NetBeans 7.1 with CI and the CI_phpStorm.php helps NetBeans as well with code completion.
+Thought I would mention I checked NetBeans 7.1 with CI and the CI_phpStorm.php helps NetBeans with code completion as well .
 
