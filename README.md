@@ -14,3 +14,10 @@ Its important that you read the comments in each file.
 
 Thought I would mention I checked NetBeans 7.1 with CI and the CI_phpStorm.php helps NetBeans with code completion as well .
 
+### Drop the CI_code_completion directory into your CodeIgniter project in phpStorm
+#### Mark as Plain Text
+/system/core/Controller.php
+/system/core/Model.php
+/system/database/DB_active_rec.php
+
+You should now have code completion.
