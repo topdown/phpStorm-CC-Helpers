@@ -5,16 +5,10 @@
  *
  * Implements code completion for CodeIgniter in phpStorm
  * phpStorm indexes all class constructs, so if this file is in the project it will be loaded.
- * -------------------------------------------------------------------
- * Drop the following file into a CI project in phpStorm
- * You can put it in the project root and phpStorm will load it.
- * (If phpStorm doesn't load it, try closing the project and re-opening it)
- * 
- * Under system/core/
- * Right click on Controller.php and set Mark as Plain Text
- * Do the same for Model.php
- * -------------------------------------------------------------------
- * This way there is no editing of CI core files for this simple layer of code completion.
+ *
+ *
+ * This property values were borrowed from another site on the internet
+ * This is just a better way to implement it, rather than editing core CI files
  *
  * PHP version 5
  *
@@ -27,10 +21,21 @@
  * @author     Jeff Behnke
  * @copyright  2009-11 Valid-Webs.com
  * @license    GPL http://www.gnu.org/copyleft/gpl.html
- * @version    2012.01.28
+ * @version    2012.02.03
  */
 
 /**
+ * ---------------------- Models to Load ----------------------
+ * @property Mycal_model $Mycal_model  Example adding your model
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ * -----------------------------------------------------------
  * @property CI_DB_active_record $db              This is the platform-independent base Active Record implementation class.
  * @property CI_DB_forge $dbforge                 Database Utility Class
  * @property CI_Benchmark $benchmark              This class enables you to mark points and calculate the time difference between them.<br />  Memory consumption can also be displayed.
@@ -43,7 +48,7 @@
  * @property CI_Exceptions $exceptions            Exceptions Class
  * @property CI_Form_validation $form_validation  Form Validation Class
  * @property CI_Ftp $ftp                          FTP Class
- * @property CI_Hooks $hooks                      Provides a mechanism to extend the base system without hacking.
+ * @property CI_Hooks $hooks                      //dead
  * @property CI_Image_lib $image_lib              Image Manipulation class
  * @property CI_Input $input                      Pre-processes global input data for security
  * @property CI_Lang $lang                        Language Class
@@ -73,7 +78,9 @@
  * @property CI_Utf8 $utf8                        Provides support for UTF-8 environments
  * @property CI_Security $security                Security Class, xss, csrf, etc...
  */
-class CI_Controller{}
+class CI_Controller
+{
+}
 
 /**
  * @property CI_DB_active_record $db              This is the platform-independent base Active Record implementation class.
@@ -88,7 +95,7 @@ class CI_Controller{}
  * @property CI_Exceptions $exceptions            Exceptions Class
  * @property CI_Form_validation $form_validation  Form Validation Class
  * @property CI_Ftp $ftp                          FTP Class
- * @property CI_Hooks $hooks                      Provides a mechanism to extend the base system without hacking.
+ * @property CI_Hooks $hooks                      //dead
  * @property CI_Image_lib $image_lib              Image Manipulation class
  * @property CI_Input $input                      Pre-processes global input data for security
  * @property CI_Lang $lang                        Language Class
@@ -118,4 +125,6 @@ class CI_Controller{}
  * @property CI_Utf8 $utf8                        Provides support for UTF-8 environments
  * @property CI_Security $security                Security Class, xss, csrf, etc...
  */
-class CI_Model{}
+class CI_Model
+{
+}
