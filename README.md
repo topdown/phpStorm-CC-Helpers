@@ -16,8 +16,10 @@ Thought I would mention I checked NetBeans 7.1 with CI and the CI_phpStorm.php h
 
 ### Drop the CI_code_completion directory into your CodeIgniter project in phpStorm
 #### Mark as Plain Text
-/system/core/Controller.php
-/system/core/Model.php
-/system/database/DB_active_rec.php
+* /system/core/Controller.php
+
+* /system/core/Model.php
+
+* /system/database/DB_active_rec.php
 
 You should now have code completion.
