@@ -17,9 +17,23 @@ Thought I would mention I checked NetBeans 7.1 with CI and the CI_phpStorm.php h
 ### Drop the CI_code_completion directory into your CodeIgniter project in phpStorm
 #### Mark as Plain Text
 * /system/core/Controller.php
-
 * /system/core/Model.php
-
 * /system/database/DB_active_rec.php
 
 You should now have code completion.
+
+##### Using the my_models.php
+Add your models to the docBlock
+example
+<pre>
+	@property membership_model $membership_model
+</pre>
+
+membership_model is the model class and $membership_model will be the propery you use to instance it.
+
+Example
+<pre>
+	$this->membership_model->get_records();
+</pre>
+
+This will give you code completion for your model methods.
