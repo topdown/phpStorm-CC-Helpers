@@ -24,14 +24,15 @@ You should now have code completion.
 
 ##### Using the my_models.php
 Add your models to the docBlock
-example
+
+Example 
 <pre>
 	@property membership_model $membership_model
 </pre>
 
 membership_model is the model class and $membership_model will be the propery you use to instance it.
 
-Example
+Example 
 <pre>
 	$this->membership_model->get_records();
 </pre>
