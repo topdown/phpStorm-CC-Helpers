@@ -25,17 +25,6 @@
  */
 
 /**
- * ---------------------- Models to Load ----------------------
- * @property Mycal_model $Mycal_model  Example adding your model
- *
- *
- *
- *
- *
- *
- *
- *
- * -----------------------------------------------------------
  * @property CI_DB_active_record $db              This is the platform-independent base Active Record implementation class.
  * @property CI_DB_forge $dbforge                 Database Utility Class
  * @property CI_Benchmark $benchmark              This class enables you to mark points and calculate the time difference between them.<br />  Memory consumption can also be displayed.
@@ -78,7 +67,7 @@
  * @property CI_Utf8 $utf8                        Provides support for UTF-8 environments
  * @property CI_Security $security                Security Class, xss, csrf, etc...
  */
-class CI_Controller
+class CI_Controller extends my_models
 {
 }
 

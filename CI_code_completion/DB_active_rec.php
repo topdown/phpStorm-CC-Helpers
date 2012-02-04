@@ -1068,7 +1068,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string $limit  the limit clause
 	 * @param string $offset the offset clause
 	 *
-	 * @return CI_DB_active_record
+	 * @return mixed $result
 	 */
 	public function get($table = '', $limit = null, $offset = null)
 	{
@@ -1087,6 +1087,7 @@ class CI_DB_active_record extends CI_DB_driver
 
 		$result = $this->query($sql);
 		$this->_reset_select();
+
 		return $result;
 	}
 
