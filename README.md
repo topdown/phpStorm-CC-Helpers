@@ -12,8 +12,11 @@ Its important that you read the comments in each file.
 * WordPress     example.php         Some example fixes
 </pre>
 
-Laravel helpers https://github.com/danielboendergaard/laravel-helpers
-OpenCart helpers coming soon
+Laravel helpers https://github.com/danielboendergaard/laravel-helpers 
+
+CodeIgniter source https://github.com/EllisLab/CodeIgniter 
+
+OpenCart helpers coming soon 
 
 Thought I would mention I checked NetBeans 7.1 with CI and the CI_phpStorm.php helps NetBeans with code completion as well .
 
