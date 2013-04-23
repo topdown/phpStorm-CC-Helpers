@@ -21,22 +21,22 @@ CodeIgniter source https://github.com/EllisLab/CodeIgniter
 Thought I would mention I checked NetBeans 7.1 with CI and the CI_phpStorm.php helps NetBeans with code completion as well .
 
 ## Basic Instructions
-Fork and Clone or Clone to your somewhere on your machine
+Fork and Clone or Clone to somewhere on your dev machine
 
-*Get Laravel helpers*
+***Get Laravel helpers***
 <pre>
 git submodule init
 git submodule update
 </pre>
 
-*Loading in phpStorm*
+***Loading in phpStorm***
 
 Load your actual project, then you have 2 options, set include path or add content root (Your choice)
 
-Option 1 =
+**Option 1 =**  
 File > Settings > Directories > Add Content Root > Select the directory in phpStorm-CC-helpers that is relevant > mark Resource Root
 
-Option 2 =
+**Option 2 =**  
 In the project window right click External Libraries > Configure PHP Include Paths
 Then add the path to the phpStorm-CC-helpers that is relevant
 
@@ -52,15 +52,17 @@ You should now have code completion.
 Add your models to the docBlock
 
 Example 
-<pre>
+
+```php
 	@property membership_model $membership_model
-</pre>
+```
 
 membership_model is the model class and $membership_model will be the property you use to instance it.
 
 Example 
-<pre>
+
+```php
 	$this->membership_model->get_records();
-</pre>
+```
 
 This will give you code completion for your model methods.
