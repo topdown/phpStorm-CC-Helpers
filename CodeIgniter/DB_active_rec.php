@@ -49,6 +49,10 @@
  * @category       Database
  * @author         ExpressionEngine Dev Team
  * @link           http://codeigniter.com/user_guide/database/
+ *
+ * @method      int insert_id() insert_id() The insert ID number when performing database inserts.
+ * @method      int affected_rows() affected_rows() The number of affected rows, when doing "write" type queries (insert, update, etc.).
+ * @method      int count_all() count_all(string $table) Determine the number of rows in a particular table.
  */
 class CI_DB_active_record extends CI_DB_driver
 {
@@ -124,7 +128,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string $select
 	 * @param null   $escape
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function select($select = '*', $escape = NULL)
 	{
@@ -163,7 +167,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string $select the field
 	 * @param string $alias  an alias
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function select_max($select = '', $alias = '')
 	{
@@ -182,7 +186,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string $select the field
 	 * @param string $alias  an alias
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function select_min($select = '', $alias = '')
 	{
@@ -201,7 +205,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string $select the field
 	 * @param string $alias  an alias
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function select_avg($select = '', $alias = '')
 	{
@@ -220,7 +224,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string $select the field
 	 * @param string $alias  an alias
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function select_sum($select = '', $alias = '')
 	{
@@ -241,7 +245,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string $alias  an string alias
 	 * @param string $type
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	protected function _max_min_avg_sum($select = '', $alias = '', $type = 'MAX')
 	{
@@ -309,7 +313,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 *
 	 * @param bool $val
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function distinct($val = TRUE)
 	{
@@ -326,7 +330,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 *
 	 * @param mixed $from can be a string or array
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function from($from)
 	{
@@ -381,7 +385,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string $cond the join condition
 	 * @param string $type the type of join
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function join($table, $cond, $type = '')
 	{
@@ -445,7 +449,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param null  $value
 	 * @param bool  $escape
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function where($key, $value = NULL, $escape = TRUE)
 	{
@@ -464,7 +468,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param null  $value
 	 * @param bool  $escape
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function or_where($key, $value = NULL, $escape = TRUE)
 	{
@@ -483,7 +487,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string $type
 	 * @param null   $escape
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	protected function _where($key, $value = NULL, $type = 'AND ', $escape = NULL)
 	{
@@ -551,7 +555,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string $key    The field to search
 	 * @param array  $values The values searched on
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function where_in($key = NULL, $values = NULL)
 	{
@@ -569,7 +573,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string $key    The field to search
 	 * @param array  $values The values searched on
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function or_where_in($key = NULL, $values = NULL)
 	{
@@ -587,7 +591,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string $key    The field to search
 	 * @param array  $values The values searched on
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function where_not_in($key = NULL, $values = NULL)
 	{
@@ -605,7 +609,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string $key    The field to search
 	 * @param array  $values The values searched on
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function or_where_not_in($key = NULL, $values = NULL)
 	{
@@ -624,7 +628,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param boolean $not    If the statement would be IN or NOT IN
 	 * @param string  $type
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	protected function _where_in($key = NULL, $values = NULL, $not = FALSE, $type = 'AND ')
 	{
@@ -673,7 +677,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string $match
 	 * @param string $side
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function like($field, $match = '', $side = 'both')
 	{
@@ -694,7 +698,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string $match
 	 * @param string $side
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function not_like($field, $match = '', $side = 'both')
 	{
@@ -715,7 +719,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string $match
 	 * @param string $side
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function or_like($field, $match = '', $side = 'both')
 	{
@@ -734,7 +738,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param mixed  $match
 	 * @param string $side
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function or_not_like($field, $match = '', $side = 'both')
 	{
@@ -754,7 +758,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string $side
 	 * @param string $not
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	protected function _like($field, $match = '', $type = 'AND ', $side = 'both', $not = '')
 	{
@@ -808,7 +812,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 *
 	 * @param string $by
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function group_by($by)
 	{
@@ -846,7 +850,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string $value
 	 * @param bool   $escape
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function having($key, $value = '', $escape = TRUE)
 	{
@@ -866,7 +870,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string $value
 	 * @param bool   $escape
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function or_having($key, $value = '', $escape = TRUE)
 	{
@@ -887,7 +891,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string $type
 	 * @param bool   $escape
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	protected function _having($key, $value = '', $type = 'AND ', $escape = TRUE)
 	{
@@ -934,7 +938,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string $orderby
 	 * @param string $direction: asc or desc
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function order_by($orderby, $direction = '')
 	{
@@ -992,7 +996,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param integer $value the offset value
 	 * @param string  $offset
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function limit($value, $offset = '')
 	{
@@ -1013,7 +1017,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 *
 	 * @param integer $offset the offset value
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function offset($offset)
 	{
@@ -1030,7 +1034,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string  $value
 	 * @param boolean $escape
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function set($key, $value = '', $escape = TRUE)
 	{
@@ -1135,7 +1139,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param null   $limit  the string limit clause
 	 * @param null   $offset the string offset clause
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function get_where($table = '', $where = null, $limit = null, $offset = null)
 	{
@@ -1171,7 +1175,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string $table the table to retrieve the results from
 	 * @param array  $set   an associative array of insert values
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function insert_batch($table = '', $set = NULL)
 	{
@@ -1229,7 +1233,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string  $value
 	 * @param boolean $escape
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function set_insert_batch($key, $value = '', $escape = TRUE)
 	{
@@ -1289,7 +1293,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string $table the table to insert data into
 	 * @param array  $set   an associative array of insert values
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	function insert($table = '', $set = NULL)
 	{
@@ -1337,7 +1341,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string $table the table to replace data into
 	 * @param array  $set   an associative array of insert values
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function replace($table = '', $set = NULL)
 	{
@@ -1387,7 +1391,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param mixed    $where    the where clause
 	 * @param bool     $limit
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function update($table = '', $set = NULL, $where = NULL, $limit = NULL)
 	{
@@ -1450,7 +1454,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param array  $set   an associative array of update values
 	 * @param string $index the where key
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function update_batch($table = '', $set = NULL, $index = NULL)
 	{
@@ -1516,7 +1520,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param string  $index
 	 * @param boolean $escape
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function set_update_batch($key, $index = '', $escape = TRUE)
 	{
@@ -1573,7 +1577,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 *
 	 * @param string $table the table to empty
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function empty_table($table = '')
 	{
@@ -1613,7 +1617,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 *
 	 * @param string $table the table to truncate
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function truncate($table = '')
 	{
@@ -1654,7 +1658,7 @@ class CI_DB_active_record extends CI_DB_driver
 	 * @param mixed   $limit the limit clause
 	 * @param boolean $reset_data
 	 *
-	 * @return CI_DB_active_record
+	 * @return CI_DB_active_record|CI_DB_result
 	 */
 	public function delete($table = '', $where = '', $limit = NULL, $reset_data = TRUE)
 	{
