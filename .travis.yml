@@ -1,0 +1,25 @@
+language: generic
+script:
+- cp -r ./CodeIgniter plugins/CodeIgniter/
+- cd plugins/CodeIgniter/
+- zip -r ../../codeigniter-code-completion-helper-$TRAVIS_TAG.jar *
+- cd ../../
+- cp -r ./OpenCart plugins/OpenCart/
+- cd plugins/OpenCart/
+- zip -r ../../opencart-code-completion-helper-$TRAVIS_TAG.jar *
+- cd ../../
+- cp -r ./WordPress plugins/WordPress/
+- cd plugins/WordPress/
+- zip -r ../../wordpress-code-completion-helper-$TRAVIS_TAG.jar *
+- cd ../../
+deploy:
+  provider: releases
+  api_key:
+    secure: i4dz9LUINPOh0W9ZFJJr3x+LP3okb0OZ9DbqsquOx/KShz9VGalWUjbO/Pw2S48MBAcJmI9p16J5LfCnIIx5fM02yOBigCSFHCnfPFHC4ID7Ke4BmaM2OmGXFRmrnmG9xDDSPAeOpvnbau6xkg0Wr8Y1znfNOgGmZOpteb0nwdekZHnf/TQW8XtwnBKDt+s1YwGZH0xbeF7fTcMZUZm5YefeXjKBGjKcPvG69cl1Vv7jKei1fOUkW4EBxXDRXYErES0OoNmw0fdpKwkMfeQ4jyMJ3vTkvqiLHOuFhFvKWbWSRZU/Eyu+KitkCCLoxq4UGn1vkvNrEu6tLywkiGfjGS8GUn766YVucYQzPqpUc+4brrM7TgbETyGnYMeYPxzIPFwwjkbUu6TRbUtzArtkaLfzkg9qEFHINohuhLNBCmfjMj1DwM/5LuO5eh+cB4qG0Pa2RCVa6rkCunb9BSvl1NefkJCFjbALPvngghFqlSmdPqJ9ZmZ3zXZGODNTgUdZJLhheC7i9BYlwjioy3iOUjnEVCt6jQHfvFAGWP7I2R9phGATMoCOepD2r/MriRhmVETdJjvGsbvHJohuvsN/dX4LYF0VnJKV8r7Wo7Ox83Ag825pHe0SwO5AclkAxVSuqrXXn9W0Cb2o/BIk2GCfhquvO60/yZnQz6HJcHwFJFY=
+  file:
+  - codeigniter-code-completion-helper-$TRAVIS_TAG.jar
+  - opencart-code-completion-helper-$TRAVIS_TAG.jar
+  - wordpress-code-completion-helper-$TRAVIS_TAG.jar
+  skip_cleanup: true
+  on:
+    tags: true

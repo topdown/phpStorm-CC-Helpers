@@ -1,0 +1,27 @@
+<idea-plugin version="2">
+    <id>me.artpsb.idea.plugin.codeigniter.code.completion.helper</id>
+    <name>CodeIgniter Code Completion Helper</name>
+    <version>1.0</version>
+    <vendor email="contact@artspb.me" url="https://artspb.me">Artem Khvastunov</vendor>
+
+    <description><![CDATA[
+    Provides code completion support for CodeIgniter.
+  ]]></description>
+
+    <change-notes><![CDATA[
+    <h3>1.0</h3>
+    <ul>
+      <li>Initial support.</li>
+    </ul>
+  ]]>
+    </change-notes>
+
+    <idea-version since-build="163.3984"/>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.jetbrains.php</depends>
+
+    <extensions defaultExtensionNs="com.jetbrains.php">
+        <libraryRoot id="CodeIgniter" path="/CodeIgniter/" runtime="false"/>
+    </extensions>
+</idea-plugin>
