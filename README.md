@@ -67,6 +67,10 @@ Example
 
 This will give you code completion for your model methods.
 
+### OpenCart Specific
+#### Mark as Plain Text
+* /system/engine/controller.php
+* /system/engine/model.php
+* /system/engine/loader.php
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/topdown/phpstorm-cc-helpers/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
