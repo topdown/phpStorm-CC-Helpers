@@ -1,0 +1,33 @@
+<idea-plugin version="2">
+    <id>me.artpsb.idea.plugin.codeigniter.code.completion.helper</id>
+    <name>CodeIgniter Code Completion Helper</name>
+    <version>1.0</version>
+    <vendor email="validwebs@gmail.com" url="https://validwebs.com">Jeff Behnke</vendor>
+
+    <description><![CDATA[
+    Provides code completion support for CodeIgniter.
+    <strong>Mark as Plain Text</strong>
+    <ul>
+        <li>/system/core/Controller.php</li>
+        <li>/system/core/Model.php</li>
+        <li>/system/database/DB_active_rec.php</li>
+    </ul>
+  ]]></description>
+
+    <change-notes><![CDATA[
+    <h3>1.0</h3>
+    <ul>
+      <li>Initial support.</li>
+    </ul>
+  ]]>
+    </change-notes>
+
+    <idea-version since-build="163.3984"/>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.jetbrains.php</depends>
+
+    <extensions defaultExtensionNs="com.jetbrains.php">
+        <libraryRoot id="CodeIgniter" path="/CodeIgniter/" runtime="false"/>
+    </extensions>
+</idea-plugin>

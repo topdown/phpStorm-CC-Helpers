@@ -1,0 +1,27 @@
+<idea-plugin version="2">
+    <id>me.artpsb.idea.plugin.wordpress.code.completion.helper</id>
+    <name>WordPress Code Completion Helper</name>
+    <version>1.0</version>
+    <vendor email="validwebs@gmail.com" url="https://validwebs.com">Jeff Behnke</vendor>
+
+    <description><![CDATA[
+    Provides code completion support for WordPress.
+  ]]></description>
+
+    <change-notes><![CDATA[
+    <h3>1.0</h3>
+    <ul>
+      <li>Initial support.</li>
+    </ul>
+  ]]>
+    </change-notes>
+
+    <idea-version since-build="163.3984"/>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.jetbrains.php</depends>
+
+    <extensions defaultExtensionNs="com.jetbrains.php">
+        <libraryRoot id="WordPress" path="/WordPress/" runtime="false"/>
+    </extensions>
+</idea-plugin>

@@ -14,6 +14,14 @@ Its important that you read the comments in each file.
 * Laravel       submodule laravel-helpers
 </pre>
 
+
+
+##### Note: plugins work only in PhpStorm 2016.3 EAP
+Props to @artspb for pointing me to this and showing me how they are created.
+
+The plugins in this repo will be available via the phpStorm plugin system as of `2016.3 EAP`
+
+
 Laravel helpers https://github.com/danielboendergaard/laravel-helpers 
 
 CodeIgniter source https://github.com/EllisLab/CodeIgniter  
