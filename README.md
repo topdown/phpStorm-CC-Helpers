@@ -1,6 +1,8 @@
 Code Completion for OSS projects in phpStorm
 ===========================================
 
+[![Build Status](https://travis-ci.org/artspb/phpStorm-CC-Helpers.svg?branch=master)](https://travis-ci.org/artspb/phpStorm-CC-Helpers)
+
 #### These are helper files for code completion in phpStorm with some Open Source Software that I work with.
 
 Its important that you read the comments in each file.
